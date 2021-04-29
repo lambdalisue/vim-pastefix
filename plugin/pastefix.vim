@@ -1,4 +1,4 @@
-if exists('g:loaded_pastefix')
+if exists('g:loaded_pastefix') || !has('nvim')
   finish
 endif
 let g:loaded_pastefix = 1
