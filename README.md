@@ -7,13 +7,13 @@ A workaround Neovim plugin to fix `clipboard=unnamed` issue ([#1822](https://git
 <td>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/546312/116499524-52808c00-a8e7-11eb-9b54-65658b579c5e.gif"><br>
-<strong><code>clipboard=unnamed</code> WITHOUT this plugin on Neovim</strong>
+<strong>WITHOUT this plugin on Neovim</strong>
 </p>
 </td>
 <td>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/546312/116499520-4f859b80-a8e7-11eb-9d64-536b75f8c0ca.gif"><br>
-<strong><code>clipboard=unnamed</code> WITH this plugin on Neovim</strong>
+<strong>WITH this plugin on Neovim</strong>
 </p>
 </td>
 </tr>
