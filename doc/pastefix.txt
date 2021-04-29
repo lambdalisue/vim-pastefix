@@ -1,0 +1,67 @@
+*pastefix.txt*			Fix Neovim's unnamed clipboard issue
+
+Author:  Alisue <lambdalisue@hashnote.net>
+License: MIT license
+
+=============================================================================
+CONTENTS						*pastefix-contents*
+
+INTRODUCTION				|pastefix-introduction|
+INTERFACE				|pastefix-interface|
+  VARIABLE				|pastefix-interface-variable|
+  MAPPING				|pastefix-interface-mapping|
+  FUNCTION				|pastefix-interface-function|
+
+
+=============================================================================
+INTRODUCTION						*pastefix-introduction*
+
+*pastefix.vim* (pastefix) is a workaround plugin to fix unnamed clipboard issue
+on block copy/paste of Neovim (#1822).
+
+It defines |<Plug>(pastefix-p)| and |<Plug>(pastefix-P)| which is mapped to
+|p| and |P| respectively in default.
+
+Use |g:pastefix_no_default_mappings| to disable mappings of |p| and |P|.
+
+Ref:
+https://github.com/neovim/neovim/issues/1822
+
+=============================================================================
+INTERFACE						*pastefix-interface*
+
+-----------------------------------------------------------------------------
+VARIABLE					*pastefix-interface-variable*
+
+*g:pastefix_no_default_mappings*
+	Disable default mappings of |p| and |P|.
+	Users need to map |<Plug>(pastefix-p)| and |<Plug>(pastefix-P)| with
+	themselves like:
+>
+	let g:pastefix_no_default_mappings = 1
+	nmap <Leader>p <Plug>(pastefix-p)
+	nmap <Leader>P <Plug>(pastefix-P)
+<
+-----------------------------------------------------------------------------
+MAPPING						*pastefix-interface-mapping*
+
+*<Plug>(pastefix-p)*
+	Fixed version of normal |p|.
+
+*<Plug>(pastefix-P)*
+	Fixed version of normal |P|.
+
+-----------------------------------------------------------------------------
+FUNCTION					*pastefix-interface-function*
+
+						*pastefix#put()*
+pastefix#put({cmd})
+	Return a proper expression to execute |put| of the {cmd}.
+	The {cmd} must be one of "p" or "P".
+	Use it with |map-<expr>| like:
+>
+	nnoremap <silent><expr> p pastefix#put("p")
+	nnoremap <silent><expr> P pastefix#put("P")
+<
+=============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
