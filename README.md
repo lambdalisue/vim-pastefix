@@ -1,4 +1,4 @@
-# pastefix.nvim
+# pastefix.vim
 
 A workaround Neovim plugin to fix `clipboard=unnamed` issue ([#1822](https://github.com/neovim/neovim/issues/1822)).
 
